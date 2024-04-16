@@ -119,7 +119,7 @@ public class MainActivity extends ListActivity {
     private void sendMessage() {
         EditText inputText = (EditText) findViewById(R.id.messageInput);
         String input = inputText.getText().toString();
-        if (!input.equals("")) {
+        if (!"".equals(input)) {
             // Create our 'model', a Chat object
             Chat chat = new Chat(input, mUsername);
             // Create a new, auto-generated child of that chat location, and save our chat data there
