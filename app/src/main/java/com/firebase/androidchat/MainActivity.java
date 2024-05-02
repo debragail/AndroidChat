@@ -16,6 +16,7 @@ import com.firebase.client.DataSnapshot;
 import com.firebase.client.Firebase;
 import com.firebase.client.FirebaseError;
 import com.firebase.client.ValueEventListener;
+import java.security.SecureRandom;
 
 import java.util.Random;
 
@@ -109,7 +110,7 @@ public class MainActivity extends ListActivity {
         SharedPreferences prefs = getApplication().getSharedPreferences("ChatPrefs", 0);
         mUsername = prefs.getString("username", null);
         if (mUsername == null) {
-            Random r = new Random();
+            Random r = new SecureRandom();
             // Assign a random user name if we don't have one saved.
             mUsername = "JavaUser" + r.nextInt(100000);
             prefs.edit().putString("username", mUsername).commit();
